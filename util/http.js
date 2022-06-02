@@ -4,12 +4,11 @@ const BACKEND_URL =
 	'https://react-navtive-expenseapp-default-rtdb.firebaseio.com';
 
 export const storeExpense = expenseData => {
-	axios.post(`${BACKEND_URL}/expenses.json, ${expenseData}`);
+	axios.post(`${BACKEND_URL}/expenses.json`, expenseData);
 };
 
 export const fetchExpenses = async () => {
 	const response = await axios.get(`${BACKEND_URL}/expenses.json`);
-
 	const expenses = [];
 
 	for (const key in response.data) {
